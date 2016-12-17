@@ -1,0 +1,12 @@
+<div class="wishlist-wrapper">
+    <div class="delete-button-wrapper">
+        <div class="delete-button"></div>
+    </div>
+    <a href="{% url 'list' item.id %}">
+        <div class="wishlist">
+            <input type="hidden" class="list-id" value="{{ item.id }}" />
+            <span class="name">{{ item.name }}</span>
+        </div>
+        <div class="clear"></div>
+    </a>
+</div>

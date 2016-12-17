@@ -1,0 +1,50 @@
+{% load staticfiles %}
+{% load compress %}
+
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Stuff you want to buy</title>
+
+<link href="{% static 'imgs/favicon.png' %}" rel="icon" type="image/png" />
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+{% compress css %}
+<link href="{% static 'css/main.scss' %}" rel="stylesheet" type="text/x-scss" />
+{% endcompress %}
+</head>
+<body>
+
+<div id="header">
+    <div>
+        <div id="mobile-header">
+            <h1>stuff you want to buy</h1>
+        </div>
+        <div id="header-links">
+            {% if user.is_authenticated %}
+            <a href="{% url 'settings' %}">{{ user.username }}</a>
+            <a href="{% url 'lists_main' %}">{{ user.username }}'s lists</a>
+            <a href="{% url 'logout' %}">logout</a>
+            {% else %}
+            <a href="{% url 'index' %}">home</a>
+            <a href="{% url 'login' %}">login</a>
+            <a href="{% url 'signup' %}">signup</a>
+            {% endif %}
+        </div>
+        <div id="desktop-header">
+            <h1>stuff you want to buy</h1>
+        </div>
+    </div>
+</div>
+
+<div id="main">
+{% block content %}{% endblock %}
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="{% static 'js/main.js' %}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

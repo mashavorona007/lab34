@@ -1,0 +1,5 @@
+django==1.9.8
+django_compressor
+django-libsass==0.7
+requests==2.11.1
+Pillow==3.3.1

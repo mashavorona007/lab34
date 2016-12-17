@@ -1,0 +1,455 @@
+@import '_variables'; 
+
+body {
+    background-color: $background-color; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Open Sans', sans-serif;
+    color: #111; 
+}
+
+a {
+    text-decoration: none; 
+    color: inherit; 
+}
+
+h2 {
+    margin: 0; 
+}
+
+p {
+    font-size: 0.9em; 
+}
+
+#header {
+    width: 100%; 
+    background-color: $base-color; 
+    color: #fff; 
+    padding: 0; 
+}
+#header > div {
+    width: 50%; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+#header-links, #desktop-header { 
+    display: inline-block; 
+    vertical-align: top; 
+    padding-right: 25px; 
+}
+#header > div > div > h1 {
+    font-size: 2.0em; 
+}
+#header > div > div > a {
+    background-color: $base-color-dark; 
+    display: inline-block; 
+    vertical-align: top; 
+    padding: 15px; 
+    margin-right: 10px; 
+    font-size: 1.0em; 
+    
+    text-decoration: none; 
+    color: #fff; 
+    
+    transition: padding-top 0.5s; 
+    -moz-transition: padding-top 0.5s; 
+    -o-transition: padding-top 0.5s; 
+    -webkit-transition: padding-top 0.5s; 
+}
+#header > div > div > a:hover {
+    padding-top: 30px; 
+    transition: padding-top 0.5s; 
+    -moz-transition: padding-top 0.5s; 
+    -o-transition: padding-top 0.5s; 
+    -webkit-transition: padding-top 0.5s; 
+}
+
+#mobile-header { display: none; }
+
+#main {
+    width: 50%; 
+    min-width: 720px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding: 35px; 
+}
+
+.icon {
+    width: 30px; 
+    height: 30px; 
+    opacity: 0.4;
+    display: inline-block; 
+    vertical-align: middle; 
+}
+.icon:hover {
+    opacity: 0.7; 
+    cursor: pointer; 
+}
+
+.icon.edit {
+    width: 20px; 
+    height: 20px; 
+    opacity: 0.2; 
+    display: none; 
+}
+.editable-content {
+    display: inline-block; 
+    border-bottom: 1px dotted rgba(0,0,0,0); 
+}
+.editable-content:hover, 
+[contenteditable]:focus {
+    border-bottom: 1px dotted #888; 
+    cursor: pointer; 
+}
+[contenteditable]:focus {
+    outline: 0; 
+    background-color: $pale-neutral-color; 
+}
+
+.submit-button { 
+    display: none; 
+}
+
+.clear {
+    display: none; 
+    clear: both; 
+}
+.spaced {
+    margin-bottom: 40px; 
+}
+
+.public, private {
+    font-weight: bold; 
+    text-transform: lowercase; 
+}
+.public {
+    color: $public-color; 
+}
+.private {
+    color: $private-color; 
+}
+
+.message {
+    border-radius: 15px; 
+    box-sizing: border-box; 
+    width: 100%; 
+    margin: 15px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    font-size: 90%; 
+    padding-left: 30px; 
+    padding-right: 30px; 
+    position: relative; 
+}
+.message .close-button {
+    width: 15px; 
+    height: 15px; 
+    
+    position: absolute; 
+    top: 15px; 
+    right: 15px; 
+    
+    background-image: url('../imgs/icons/close-button.png'); 
+    background-size: 15px 15px; 
+    background-repeat: no-repeat; 
+    background-position: top right; 
+    opacity: 0.4; 
+}
+.message .close-button:hover {
+    opacity: 0.9; 
+    cursor: pointer; 
+}
+.sad {
+    border: 1px solid $sad-dark-color; 
+    background-color: $sad-color; 
+}
+.neutral {
+    border: 1px solid $neutral-dark-color; 
+    background-color: $neutral-color; 
+}
+.happy {
+    border: 1px solid $happy-dark-color; 
+    background-color: $happy-color; 
+}
+
+.note {
+    font-size: 85%; 
+    color: #444; 
+}
+
+form > div {
+    margin-top: 5px; 
+    margin-bottom: 5px; 
+}
+form .form-fields {
+    display: inline-block; 
+    vertical-align: top; 
+    margin-top: 0; 
+    margin-left: 8px; 
+}
+form label {
+    display: inline-block; 
+    vertical-align: middle; 
+    font-size: 1.1em; 
+    width: 150px; 
+    padding-left: 10px; 
+    border-left: 4px dotted $accent-color;
+}
+form input {
+    display: inline-block; 
+    vertical-align: middle; 
+}
+form #price-field { width: 90px; }
+form input, form textarea {
+    width: 200px; 
+    outline: 0; 
+    border: 0; 
+    background-color: $base-color-light; 
+    padding: 10px; 
+    font-family: inherit; 
+    font-size: 1.1em; 
+    color: #111; 
+    margin-bottom: 5px; 
+}
+form textarea {
+    display: block; 
+    width: 100%; 
+    height: 90px; 
+}
+form textarea:focus, form input:focus {
+    background-color: $base-color-highlight; 
+}
+form .thumbnail-div {
+    display: inline-block; 
+    vertical-align: top; 
+    margin: 0; 
+    margin-left: 10px; 
+}
+form .thumbnail-div #left-arrow, form .thumbnail-div #right-arrow {
+    display: inline-block; 
+    vertical-align: middle; 
+    width: 20px; 
+    opacity: 0.4; 
+}
+form .thumbnail-div #left-arrow:hover, form .thumbnail-div #right-arrow:hover {
+    opacity: 0.7; 
+    cursor: pointer; 
+}
+form .button {
+    background-color: $accent-color; 
+    color: #fff; 
+}
+form .button:hover {
+    background-color: #eee; 
+    color: #111; 
+    cursor: pointer; 
+}
+
+.wishlist-wrapper {
+    width: 100%; 
+    margin-bottom: 10px;
+    position: relative; 
+    display: none; 
+}
+.wishlist-wrapper .delete-button-wrapper, 
+.wishlist-item-wrapper .delete-button-wrapper {
+    float: right; 
+    display: block; 
+}
+.wishlist-wrapper .delete-button, 
+.wishlist-item-wrapper .delete-button {
+    display: block; 
+    
+    position: absolute; 
+    height: 100%; 
+    width: 40px; 
+    
+    background-color: #fff; 
+    background-size: 30px 30px; 
+    background-image: url('../imgs/icons/round-delete-button.png'); 
+    background-repeat: no-repeat; 
+    background-position: center right;
+    opacity: 0.4;     
+}
+.wishlist-item-wrapper .delete-button {
+    background-position: top right; 
+}
+.wishlist-wrapper .delete-button:hover, 
+.wishlist-item-wrapper .delete-button:hover {
+    cursor: pointer; 
+    opacity: 0.7; 
+}
+.wishlist {
+    overflow: auto;
+    box-sizing: border-box; 
+    padding: 15px; 
+    background-color: #eee; 
+}
+.wishlist:nth-child(even) {
+    background-color: #ddd; 
+}
+.wishlist:hover {
+    background-color: $accent-color; 
+    cursor: pointer; 
+}
+.wishlist .name {
+    font-size: 1.2em; 
+}
+
+#add-wishlist-form, #add-item-form {
+    box-sizing: border-box; 
+    background-color: $background-color; 
+    border: 1px solid #eee; 
+    border-radius: 5px; 
+    padding: 15px; 
+    font-size: 0.75em;
+}
+
+#item-thumbnail { 
+    display: inline-block; 
+    vertical-align: top; 
+    width: 100px; 
+    height: 100px; 
+    padding: 5px; 
+    border-radius: 5px; 
+    border: 1px solid #eee; 
+}
+#item-thumbnail > div {
+    height: 100px; 
+    width: 100px; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+#item-thumbnail > div.loading {
+    background-size: 50%; 
+    background-position: center; 
+}
+
+.wishlist-item-wrapper {
+    width: 100%; 
+    margin-bottom: 10px;
+    position: relative; 
+    display: none; 
+}
+
+.wishlist-item {
+    overflow: auto;
+    box-sizing: border-box; 
+    padding: 15px; 
+    border-radius: 5px; 
+    background-color: #fff; 
+    border: 1px solid #e5e5e5; 
+    font-size: 1.1em; 
+}
+.wishlist-item-wrapper {
+    margin-top: 20px; 
+}
+.wishlist-item-wrapper:nth-child(even) > .wishlist-item {
+    border: 1px solid #f0f0f0; 
+}
+.wishlist-item > .thumbnail-wrapper {
+    display: inline-block; 
+    vertical-align: top; 
+    width: auto;  
+}
+.wishlist-item > .item-info {
+    display: inline-block; 
+    vertical-align: top; 
+    width: auto; 
+    margin-left: 10px; 
+}
+.wishlist-item .thumbnail-wrapper {
+    padding: 10px; 
+}
+.wishlist-item .thumbnail-wrapper > div {
+    border-radius: 5px; 
+    width: 100px; 
+    height: 100px; 
+    border: 1px solid #eee; 
+    background-size: cover; 
+}
+.wishlist-item .item-name {
+    text-transform: uppercase; 
+}
+.wishlist-item .item-details {
+    font-size: 0.8em; 
+}
+.wishlist-item .item-notes {
+    font-size: 0.7em; 
+    margin-top: 8px; 
+}
+.wishlist-item .item-price {
+    font-weight: bold; 
+}
+.wishlist-item .item-link a {
+    padding: 5px; 
+    background-color: #e5e5e5; 
+    font-weight: bold; 
+    margin: 5px; 
+    display: inline-block; 
+}
+.wishlist-item .item-link a:hover {
+    color: #666; 
+    background-color: #eee; 
+}
+
+@media screen and (max-width: 800px), (max-device-width: 800px) {
+    .icon { display: none; }
+    .submit-button { display: block; }
+    form input {
+	margin-bottom: 2px; 
+	width: 100%; 
+	font-size: 1.3em; 
+    }
+    form textarea {
+	font-size: 1.3em; 
+	margin-bottom: 2px; 
+	width: 100%; 
+	height: 75px; 
+    }
+    form .submit-button {
+	margin-top: 10px; 
+    }
+    #desktop-header { display: none; }
+    #mobile-header { display: block; }
+
+    body {
+	font-size: 1.2em; 
+    }
+
+    form .thumbnail-div {
+	display: none; 
+    }
+    form .thumbnail-div #left-arrow, form .thumbnail-div #right-arrow {
+	display: none; 
+    }
+    form .thumbnail-div #left-arrow:hover, form .thumbnail-div #right-arrow:hover {
+    }
+
+    .message { padding-right: 45px; }
+    .message .close-button {
+	width: 30px; 
+	height: 30px;
+	background-size: 30px 30px; 
+    }
+    #main { width: 85%; padding: 20px;
+	  padding-top: 5px; }
+    #header { padding-bottom: 10px; }
+    #header-links { width: 100%; }
+    #header > div { width: 85%; }
+    #header > div > div > a {
+	display: block; 
+	background: none; 
+	border-bottom: 3px solid $base-color-dark; 
+	background-color: rgba(0,0,0,0.1);
+	transition: none; 
+	padding: 5px; 
+	padding-left: 10px; 
+	margin-bottom: 5px; 
+    }
+    #header > div > div > a:hover {
+	transition: none; 
+	padding-top: 5px; 
+    }
+
+}

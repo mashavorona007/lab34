@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+{% if readonly %}
+<h2>{{ wishlist.name }}</h2>
+
+{% else %}
+<h2 class="editable-content" data-edit="list-name" data-id="{{ wishlist.id }}">{{ wishlist.name }}</h2>
+
+<p>Click the wishlist name to edit it.</p>
+
+<div id="wishlist-settings"> 
+<p>This wishlist is: {% if wishlist.private %}
+<span class="private">Private</span>{% else %}
+<span class="public">Public</span>
+<span class="note">- copy the URL of this page to share!</span>{% endif %}</p>
+</div>
+
+<form id="add-item-form">
+  <img src="{% static 'imgs/icons/round-add-button.png' %}" class="icon" id="add-button" />
+  <div class="form-fields">
+    <input type="text" name="name" id="name-field" placeholder="Item Name" />
+    <input type="text" maxlength="8" id="price-field" name="price" placeholder="Price" />
+    <input type="text" name="link" id="link-field" placeholder="URL to Product" />
+    <textarea name="notes" id="notes-field" placeholder="Notes (optional)"></textarea>
+    <input type="hidden" name="thumbnail" id="thumbnail-field" value="" />
+    <input type="submit" class="submit-button button" id="add-item-button" value="Add to List" />
+  </div>
+  <div class="thumbnail-div">
+    <img id="left-arrow" src="{% static 'imgs/icons/keyboard-left-arrow-button.png' %}">
+    <div id="item-thumbnail"><div></div></div>
+    <img id="right-arrow" src="{% static 'imgs/icons/keyboard-right-arrow-button.png' %}">
+  </div>
+</form>
+{% endif %}
+
+<div id="wishlist-items-main"> 
+    {% for item in items %}
+        {% include 'lists/list_product.html' %}
+    {% empty %}
+    <div class="sad message">
+        <p><strong>Oh no!</strong>
+        You don't have any items yet. Maybe you should add one now.</p>
+        <div class="close-button"></div>
+    </div>
+    {% endfor %}
+</div>
+
+{% csrf_token %}
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+const THIS_URL = "{% url 'list' wishlist.id %}"; 
+
+const ADD_URL = "{% url 'add_product' wishlist.id %}"; 
+const DELETE_URL = "{% url 'delete_product' wishlist.id %}"; 
+
+const THUMBNAILS_URL = "{% url 'thumbnails' %}"; 
+const NO_IMG = "{% static 'imgs/thumbnail_default.png' %}"; 
+const LOADING_IMG = "{% static 'imgs/loading.gif' %}"; 
+</script>
+<script src="{% static 'js/list.js' %}"></script>
+<script src="{% static 'js/editable.js' %}"></script>
+{% endblock %}

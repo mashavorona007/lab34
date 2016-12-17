@@ -1,0 +1,515 @@
+/* COLORS */
+/* line 3, sywtb/static/css/main.scss */
+body {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #111; }
+
+/* line 11, sywtb/static/css/main.scss */
+a {
+  text-decoration: none;
+  color: inherit; }
+
+/* line 16, sywtb/static/css/main.scss */
+h2 {
+  margin: 0; }
+
+/* line 20, sywtb/static/css/main.scss */
+p {
+  font-size: 0.9em; }
+
+/* line 24, sywtb/static/css/main.scss */
+#header {
+  width: 100%;
+  background-color: #40ccf0;
+  color: #fff;
+  padding: 0; }
+
+/* line 30, sywtb/static/css/main.scss */
+#header > div {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto; }
+
+/* line 35, sywtb/static/css/main.scss */
+#header-links, #desktop-header {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 25px; }
+
+/* line 40, sywtb/static/css/main.scss */
+#header > div > div > h1 {
+  font-size: 2.0em; }
+
+/* line 43, sywtb/static/css/main.scss */
+#header > div > div > a {
+  background-color: #5aa8bc;
+  display: inline-block;
+  vertical-align: top;
+  padding: 15px;
+  margin-right: 10px;
+  font-size: 1.0em;
+  text-decoration: none;
+  color: #fff;
+  transition: padding-top 0.5s;
+  -moz-transition: padding-top 0.5s;
+  -o-transition: padding-top 0.5s;
+  -webkit-transition: padding-top 0.5s; }
+
+/* line 59, sywtb/static/css/main.scss */
+#header > div > div > a:hover {
+  padding-top: 30px;
+  transition: padding-top 0.5s;
+  -moz-transition: padding-top 0.5s;
+  -o-transition: padding-top 0.5s;
+  -webkit-transition: padding-top 0.5s; }
+
+/* line 67, sywtb/static/css/main.scss */
+#mobile-header {
+  display: none; }
+
+/* line 69, sywtb/static/css/main.scss */
+#main {
+  width: 50%;
+  min-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 35px; }
+
+/* line 77, sywtb/static/css/main.scss */
+.icon {
+  width: 30px;
+  height: 30px;
+  opacity: 0.4;
+  display: inline-block;
+  vertical-align: middle; }
+
+/* line 84, sywtb/static/css/main.scss */
+.icon:hover {
+  opacity: 0.7;
+  cursor: pointer; }
+
+/* line 89, sywtb/static/css/main.scss */
+.icon.edit {
+  width: 20px;
+  height: 20px;
+  opacity: 0.2;
+  display: none; }
+
+/* line 95, sywtb/static/css/main.scss */
+.editable-content {
+  display: inline-block;
+  border-bottom: 1px dotted transparent; }
+
+/* line 99, sywtb/static/css/main.scss */
+.editable-content:hover,
+[contenteditable]:focus {
+  border-bottom: 1px dotted #888;
+  cursor: pointer; }
+
+/* line 104, sywtb/static/css/main.scss */
+[contenteditable]:focus {
+  outline: 0;
+  background-color: #fff6cd; }
+
+/* line 109, sywtb/static/css/main.scss */
+.submit-button {
+  display: none; }
+
+/* line 113, sywtb/static/css/main.scss */
+.clear {
+  display: none;
+  clear: both; }
+
+/* line 117, sywtb/static/css/main.scss */
+.spaced {
+  margin-bottom: 40px; }
+
+/* line 121, sywtb/static/css/main.scss */
+.public, private {
+  font-weight: bold;
+  text-transform: lowercase; }
+
+/* line 125, sywtb/static/css/main.scss */
+.public {
+  color: #aaca45; }
+
+/* line 128, sywtb/static/css/main.scss */
+.private {
+  color: #666; }
+
+/* line 132, sywtb/static/css/main.scss */
+.message {
+  border-radius: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 90%;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: relative; }
+
+/* line 144, sywtb/static/css/main.scss */
+.message .close-button {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-image: url("/static/imgs/icons/close-button.png");
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  opacity: 0.4; }
+
+/* line 158, sywtb/static/css/main.scss */
+.message .close-button:hover {
+  opacity: 0.9;
+  cursor: pointer; }
+
+/* line 162, sywtb/static/css/main.scss */
+.sad {
+  border: 1px solid #f99;
+  background-color: #ffcdcd; }
+
+/* line 166, sywtb/static/css/main.scss */
+.neutral {
+  border: 1px solid #ceb61c;
+  background-color: #fff6cd; }
+
+/* line 170, sywtb/static/css/main.scss */
+.happy {
+  border: 1px solid #54d454;
+  background-color: #d5ffcf; }
+
+/* line 175, sywtb/static/css/main.scss */
+.note {
+  font-size: 85%;
+  color: #444; }
+
+/* line 180, sywtb/static/css/main.scss */
+form > div {
+  margin-top: 5px;
+  margin-bottom: 5px; }
+
+/* line 184, sywtb/static/css/main.scss */
+form .form-fields {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0;
+  margin-left: 8px; }
+
+/* line 190, sywtb/static/css/main.scss */
+form label {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.1em;
+  width: 150px;
+  padding-left: 10px;
+  border-left: 4px dotted #fdc0c0; }
+
+/* line 198, sywtb/static/css/main.scss */
+form input {
+  display: inline-block;
+  vertical-align: middle; }
+
+/* line 202, sywtb/static/css/main.scss */
+form #price-field {
+  width: 90px; }
+
+/* line 203, sywtb/static/css/main.scss */
+form input, form textarea {
+  width: 200px;
+  outline: 0;
+  border: 0;
+  background-color: #d9f7ff;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1.1em;
+  color: #111;
+  margin-bottom: 5px; }
+
+/* line 214, sywtb/static/css/main.scss */
+form textarea {
+  display: block;
+  width: 100%;
+  height: 90px; }
+
+/* line 219, sywtb/static/css/main.scss */
+form textarea:focus, form input:focus {
+  background-color: #b0eeff; }
+
+/* line 222, sywtb/static/css/main.scss */
+form .thumbnail-div {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  margin-left: 10px; }
+
+/* line 228, sywtb/static/css/main.scss */
+form .thumbnail-div #left-arrow, form .thumbnail-div #right-arrow {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  opacity: 0.4; }
+
+/* line 234, sywtb/static/css/main.scss */
+form .thumbnail-div #left-arrow:hover, form .thumbnail-div #right-arrow:hover {
+  opacity: 0.7;
+  cursor: pointer; }
+
+/* line 238, sywtb/static/css/main.scss */
+form .button {
+  background-color: #fdc0c0;
+  color: #fff; }
+
+/* line 242, sywtb/static/css/main.scss */
+form .button:hover {
+  background-color: #eee;
+  color: #111;
+  cursor: pointer; }
+
+/* line 248, sywtb/static/css/main.scss */
+.wishlist-wrapper {
+  width: 100%;
+  margin-bottom: 10px;
+  position: relative;
+  display: none; }
+
+/* line 254, sywtb/static/css/main.scss */
+.wishlist-wrapper .delete-button-wrapper,
+.wishlist-item-wrapper .delete-button-wrapper {
+  float: right;
+  display: block; }
+
+/* line 259, sywtb/static/css/main.scss */
+.wishlist-wrapper .delete-button,
+.wishlist-item-wrapper .delete-button {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 40px;
+  background-color: #fff;
+  background-size: 30px 30px;
+  background-image: url("/static/imgs/icons/round-delete-button.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+  opacity: 0.4; }
+
+/* line 274, sywtb/static/css/main.scss */
+.wishlist-item-wrapper .delete-button {
+  background-position: top right; }
+
+/* line 277, sywtb/static/css/main.scss */
+.wishlist-wrapper .delete-button:hover,
+.wishlist-item-wrapper .delete-button:hover {
+  cursor: pointer;
+  opacity: 0.7; }
+
+/* line 282, sywtb/static/css/main.scss */
+.wishlist {
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 15px;
+  background-color: #eee; }
+
+/* line 288, sywtb/static/css/main.scss */
+.wishlist:nth-child(even) {
+  background-color: #ddd; }
+
+/* line 291, sywtb/static/css/main.scss */
+.wishlist:hover {
+  background-color: #fdc0c0;
+  cursor: pointer; }
+
+/* line 295, sywtb/static/css/main.scss */
+.wishlist .name {
+  font-size: 1.2em; }
+
+/* line 299, sywtb/static/css/main.scss */
+#add-wishlist-form, #add-item-form {
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 0.75em; }
+
+/* line 308, sywtb/static/css/main.scss */
+#item-thumbnail {
+  display: inline-block;
+  vertical-align: top;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #eee; }
+
+/* line 317, sywtb/static/css/main.scss */
+#item-thumbnail > div {
+  height: 100px;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+/* line 323, sywtb/static/css/main.scss */
+#item-thumbnail > div.loading {
+  background-size: 50%;
+  background-position: center; }
+
+/* line 328, sywtb/static/css/main.scss */
+.wishlist-item-wrapper {
+  width: 100%;
+  margin-bottom: 10px;
+  position: relative;
+  display: none; }
+
+/* line 335, sywtb/static/css/main.scss */
+.wishlist-item {
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  font-size: 1.1em; }
+
+/* line 344, sywtb/static/css/main.scss */
+.wishlist-item-wrapper {
+  margin-top: 20px; }
+
+/* line 347, sywtb/static/css/main.scss */
+.wishlist-item-wrapper:nth-child(even) > .wishlist-item {
+  border: 1px solid #f0f0f0; }
+
+/* line 350, sywtb/static/css/main.scss */
+.wishlist-item > .thumbnail-wrapper {
+  display: inline-block;
+  vertical-align: top;
+  width: auto; }
+
+/* line 355, sywtb/static/css/main.scss */
+.wishlist-item > .item-info {
+  display: inline-block;
+  vertical-align: top;
+  width: auto;
+  margin-left: 10px; }
+
+/* line 361, sywtb/static/css/main.scss */
+.wishlist-item .thumbnail-wrapper {
+  padding: 10px; }
+
+/* line 364, sywtb/static/css/main.scss */
+.wishlist-item .thumbnail-wrapper > div {
+  border-radius: 5px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #eee;
+  background-size: cover; }
+
+/* line 371, sywtb/static/css/main.scss */
+.wishlist-item .item-name {
+  text-transform: uppercase; }
+
+/* line 374, sywtb/static/css/main.scss */
+.wishlist-item .item-details {
+  font-size: 0.8em; }
+
+/* line 377, sywtb/static/css/main.scss */
+.wishlist-item .item-notes {
+  font-size: 0.7em;
+  margin-top: 8px; }
+
+/* line 381, sywtb/static/css/main.scss */
+.wishlist-item .item-price {
+  font-weight: bold; }
+
+/* line 384, sywtb/static/css/main.scss */
+.wishlist-item .item-link a {
+  padding: 5px;
+  background-color: #e5e5e5;
+  font-weight: bold;
+  margin: 5px;
+  display: inline-block; }
+
+/* line 391, sywtb/static/css/main.scss */
+.wishlist-item .item-link a:hover {
+  color: #666;
+  background-color: #eee; }
+
+@media screen and (max-width: 800px), (max-device-width: 800px) {
+  /* line 397, sywtb/static/css/main.scss */
+  .icon {
+    display: none; }
+  /* line 398, sywtb/static/css/main.scss */
+  .submit-button {
+    display: block; }
+  /* line 399, sywtb/static/css/main.scss */
+  form input {
+    margin-bottom: 2px;
+    width: 100%;
+    font-size: 1.3em; }
+  /* line 404, sywtb/static/css/main.scss */
+  form textarea {
+    font-size: 1.3em;
+    margin-bottom: 2px;
+    width: 100%;
+    height: 75px; }
+  /* line 410, sywtb/static/css/main.scss */
+  form .submit-button {
+    margin-top: 10px; }
+  /* line 413, sywtb/static/css/main.scss */
+  #desktop-header {
+    display: none; }
+  /* line 414, sywtb/static/css/main.scss */
+  #mobile-header {
+    display: block; }
+  /* line 416, sywtb/static/css/main.scss */
+  body {
+    font-size: 1.2em; }
+  /* line 420, sywtb/static/css/main.scss */
+  form .thumbnail-div {
+    display: none; }
+  /* line 423, sywtb/static/css/main.scss */
+  form .thumbnail-div #left-arrow, form .thumbnail-div #right-arrow {
+    display: none; }
+  /* line 429, sywtb/static/css/main.scss */
+  .message {
+    padding-right: 45px; }
+  /* line 430, sywtb/static/css/main.scss */
+  .message .close-button {
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px; }
+  /* line 435, sywtb/static/css/main.scss */
+  #main {
+    width: 85%;
+    padding: 20px;
+    padding-top: 5px; }
+  /* line 437, sywtb/static/css/main.scss */
+  #header {
+    padding-bottom: 10px; }
+  /* line 438, sywtb/static/css/main.scss */
+  #header-links {
+    width: 100%; }
+  /* line 439, sywtb/static/css/main.scss */
+  #header > div {
+    width: 85%; }
+  /* line 440, sywtb/static/css/main.scss */
+  #header > div > div > a {
+    display: block;
+    background: none;
+    border-bottom: 3px solid #5aa8bc;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: none;
+    padding: 5px;
+    padding-left: 10px;
+    margin-bottom: 5px; }
+  /* line 450, sywtb/static/css/main.scss */
+  #header > div > div > a:hover {
+    transition: none;
+    padding-top: 5px; } }

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<h2>My Wishlists</h2>
+
+<p class="spaced">Click on a wishlist if you want to view, edit, or share it.</p>
+
+<form id="add-wishlist-form">
+    <img src="{% static 'imgs/icons/round-add-button.png' %}" class="icon" id="add-button" />
+    <input type="text" id="add-name" 
+    placeholder="Name of list" required="required" />
+    <input type="submit" class="submit-button button" value="New List" />
+</form>
+
+<div id="wishlists-main">
+    {% for item in lists %}
+        {% include 'lists/index_list.html' %}
+    {% empty %}
+    <div class="sad message">
+        <p><strong>Oh no!</strong>
+        You don't have any lists yet. Maybe you should add one now.</p>
+        <div class="close-button"></div>
+    </div>
+    {% endfor %}
+</div>
+
+{% csrf_token %}
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+const MAIN_URL = "{% url 'lists_main' %}"; 
+const ADD_URL = "{% url 'add_list' %}"; 
+const DELETE_URL = "{% url 'delete_list' %}"; 
+</script>
+<script src="{% static 'js/lists.js' %}"></script>
+{% endblock %}

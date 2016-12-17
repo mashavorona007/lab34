@@ -1,0 +1,39 @@
+<div class="wishlist-item-wrapper">
+    {% if not readonly %}
+        <div class="delete-button-wrapper">
+            <div class="delete-button"></div>
+        </div>
+    {% endif %}
+    <div class="wishlist-item">
+        <input type="hidden" class="product-id" value="{{ item.id }}" />
+        <div class="thumbnail-wrapper">
+            <div style="background-image:url('{{ item.thumbnail }}');"></div>
+        </div>
+        <div class="item-info">
+            <div class="item-name{% if not readonly %}
+            editable-content"
+            data-edit="item-name"
+            data-id="{{ item.id }}
+            {% endif %}">{{ item.name }}</div>
+            <div class="item-details">
+                <span class="item-price{% if not readonly %}
+                editable-content"
+                data-edit="item-price"
+                data-id="{{ item.id }}
+                {% endif %}">${{ item.price }}</span>
+                &nbsp;|&nbsp;
+                <span class="item-link">
+                    <a href="{{ item.link }}" target="_blank">buy here</a>
+                </span>
+            </div>
+            <div class="item-notes{% if not readonly %}
+            editable-content"
+            data-edit="item-notes"
+            data-id="{{ item.id }}
+            {% endif %}">
+                {{ item.notes }}
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
